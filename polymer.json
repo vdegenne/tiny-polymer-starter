@@ -1,0 +1,7 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/my-app.js",
+  "extraDependencies": ["node_modules/@webcomponents/webcomponentsjs/**"],
+  "moduleResolution": "node",
+  "npm": true
+}
