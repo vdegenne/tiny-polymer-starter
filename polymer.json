@@ -3,5 +3,10 @@
   "shell": "src/my-app.js",
   "extraDependencies": ["node_modules/@webcomponents/webcomponentsjs/**"],
   "moduleResolution": "node",
-  "npm": true
+  "npm": true,
+  "builds": [
+    {
+      "preset": "es6-bundled"
+    }
+  ]
 }

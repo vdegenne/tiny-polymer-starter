@@ -1,6 +1,7 @@
-import { css } from 'lit-element'
+import { html } from 'lit-element'
 
-export const PageStyles = css`
+export const PageStyles = html`
+<style>
 :host {
   display: block;
   max-width: 640px;
@@ -8,4 +9,5 @@ export const PageStyles = css`
   margin-right: auto;
   padding: 20px;
 }
+</style>
 `

@@ -1,6 +1,7 @@
-import { css } from 'lit-element'
+import { html } from 'lit-element'
 
-export const LayoutStyles = css`
+export const LayoutStyles = html`
+<style>
 .flex {
   display: flex;
 }
@@ -27,4 +28,5 @@ export const LayoutStyles = css`
 .vflex.separated {
   align-items: space-between;
 }
+</style>
 `

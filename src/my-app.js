@@ -15,9 +15,9 @@ class MyApp extends LitElement {
     }
   }
 
-  static get styles() {
-    return [
-      css`
+  render() {
+    return html`
+    <style>
       :host {
         display: block;
         display: flex;
@@ -47,17 +47,12 @@ class MyApp extends LitElement {
         text-align: center;
         font-size: 80%;
       }
-      `,
-      LayoutStyles
-    ]
-  }
-
-  render() {
-    return html`
+    </style>
+    ${LayoutStyles}
     <header>${this.appTitle}</header>
 
     <main role="main" class="main-content hflex">
-      <main-page class="page" ?active="${this.path === '/'}"></main-page>
+      <main-view class="page" ?active="${this.path === '/'}"></main-view>
       <view-1 class="page" ?active="${this.path === '/view/1'}"></view-1>
     </main>
 
