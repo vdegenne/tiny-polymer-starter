@@ -12,7 +12,14 @@ You need `pm2` to be installed globally to run the server
 
 (note: remove `--watch` from the command in *server.sh* if you wish to disable server restart on files change)
 
-### Front-end
+### Front-end (development)
 
-- `yarn polymer`
+- `yarn polymer` (use `-p` to change the front port)
 
+### Front-end (production)
+
+To build the front
+
+`yarn build`
+
+After building you can request the application from the backend urls (see *Back server* above)
