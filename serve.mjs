@@ -1,5 +1,6 @@
 import fs from 'fs'
 import express from 'express'
+import bodyParser from 'body-parser'
 import yargs from 'yargs'
 let argv = yargs.argv
 
@@ -8,6 +9,7 @@ const buildRoot = './build/es6-bundled'
 const app = express()
 
 app.use(express.static(buildRoot))
+app.use(bodyParser.json())
 
 app.get('/api/ping', (req, res) => res.end('pong'))
 
