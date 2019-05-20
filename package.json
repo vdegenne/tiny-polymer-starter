@@ -2,8 +2,16 @@
   "dependencies": {
     "@material/mwc-button": "^0.5.0",
     "@polymer/paper-styles": "^3.0.1",
+    "@polymer/paper-toast": "^3.0.1",
     "@webcomponents/webcomponentsjs": "^2.2.10",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.0",
     "lit-element": "^2.1.0",
-    "pwa-helpers": "^0.9.1"
+    "pwa-helpers": "^0.9.1",
+    "yargs": "^13.2.4"
+  },
+  "scripts": {
+    "polymer": "polymer serve --proxy-path /api --proxy-target http://localhost:$(awk 'NR==2' .server)/api",
+    "build": "polymer build"
   }
 }

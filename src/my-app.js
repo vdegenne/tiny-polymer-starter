@@ -4,7 +4,9 @@ import { updateMetadata, installRouter } from 'pwa-helpers'
 import './main-view.js'
 import './view-1.js'
 
-import '@polymer/paper-styles/paper-styles'
+import '@polymer/paper-styles/paper-styles.js'
+import '@polymer/paper-toast/paper-toast.js'
+
 import { LayoutStyles } from './layout-styles.js'
 
 class MyApp extends LitElement {
@@ -46,6 +48,9 @@ class MyApp extends LitElement {
       footer {
         text-align: center;
         font-size: 80%;
+        padding:5px;
+        font-size: 90%;
+        color: grey;
       }
     </style>
     ${LayoutStyles}
@@ -55,6 +60,8 @@ class MyApp extends LitElement {
       <main-view class="page" ?active="${this.path === '/'}"></main-view>
       <view-1 class="page" ?active="${this.path === '/view/1'}"></view-1>
     </main>
+
+    <paper-toast id="toast"></paper-toast>
 
     <footer>&copy; All Rights Reserved</footer>
     `
@@ -69,6 +76,12 @@ class MyApp extends LitElement {
       this.path = location.pathname
     }
     installRouter(updateLocation)
+
+    window.toast = (text => {
+      const toaster = this.shadowRoot.querySelector('#toast')
+      toaster.text = text
+      toaster.open()
+    }).bind(this)
   }
 
   updated(changedProps) {
